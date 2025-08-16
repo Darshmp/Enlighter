@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details | Enlighter Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #354764;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .course-header {
+            background-color: #08162E;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .course-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .course-content {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .course-image {
+            flex: 1;
+        }
+        
+        .course-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-details {
+            flex: 1;
+        }
+        
+        .course-category {
+            display: inline-block;
+            background-color: #452FF4;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .course-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .course-features h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .course-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+        }
+        
+        .course-features li:before {
+            content: "✓";
+            color: #41E295;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .enroll-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .enroll-btn {
+            background-color: #452FF4;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .enroll-btn:hover {
+            background-color: #41E295;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(65, 226, 149, 0.3);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #452FF4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="course-header">
+        <div class="container">
+            <h1 id="course-title">Course Details</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href="courses.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to All Courses
+        </a>
+
+        <div class="course-content">
+            <div class="course-image">
+                <img id="course-image" src="asset/img/capbi1.jpg" alt="Course Image">
+            </div>
+            
+            <div class="course-details">
+                <span class="course-category" id="course-category">Category</span>:Technology
+                <h2 class="course-title" id="course-name">Course Name</h2>
+                <p class="course-description" id="course-description">Course description goes here...</p>
+                
+                <div class="course-features">
+                    <h3>What You'll Learn</h3>
+                    <ul id="course-features">
+                        <!-- Features will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="enroll-section">
+            <h2>Ready to Start Learning?</h2>
+            <p>Join thousands of students who have transformed their careers with our courses</p>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+    </div>
+
+    <script>
+        // Get course details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseName = urlParams.get('name');
+        const courseDesc = urlParams.get('desc');
+        const courseCategory = urlParams.get('category');
+        const courseImage = urlParams.get('image');
+        const courseFeatures = urlParams.get('features').split('|');
+        
+        // Populate the page with course details
+        document.getElementById('course-title').textContent = courseName;
+        document.getElementById('course-name').textContent = courseName;
+        document.getElementById('course-description').textContent = courseDesc;
+        document.getElementById('course-category').textContent = courseCategory;
+        document.getElementById('course-image').src = courseImage;
+        
+        const featuresList = document.getElementById('course-features');
+        courseFeatures.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            featuresList.appendChild(li);
+        });
+    </script>
+</body>
+</html>

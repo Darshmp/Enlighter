@@ -1,0 +1,1954 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="enroll-hero">
+    <div class="container">
+        <div class="enroll-hero-content" data-aos="fade-up">
+            <h1>Enroll in Our <span class="gradient-text">AI Mastery Program</span></h1>
+            <p>Take the first step towards becoming an AI expert with our comprehensive, industry-aligned curriculum.</p>
+            <div class="enroll-badge">
+                <div class="badge-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <span>Certification Included</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="var(--primary)"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="var(--primary)"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="var(--primary)"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Course Details Section -->
+<section class="course-details">
+    <div class="container">
+        <div class="details-grid">
+            <div class="course-highlights" data-aos="fade-right">
+                <div class="highlight-card glow-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Hands-on Projects</h3>
+                    <p>Build real-world applications to strengthen your portfolio with 10+ industry-relevant projects.</p>
+                </div>
+                
+                <div class="highlight-card glow-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Mentorship</h3>
+                    <p>Learn from AI professionals with 5+ years of industry experience and personalized guidance.</p>
+                </div>
+                
+                <div class="highlight-card glow-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Career Support</h3>
+                    <p>Get resume reviews, mock interviews, and job placement assistance upon completion.</p>
+                </div>
+                
+                <div class="highlight-card glow-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Access</h3>
+                    <p>Join our exclusive network of 10,000+ AI professionals and enthusiasts.</p>
+                </div>
+            </div>
+            
+            <div class="course-info" data-aos="fade-left">
+                <div class="info-card">
+                    <div class="course-thumbnail">
+                        <img src="{{ url_for('static', filename='img/course-thumbnail.jpg') }}" alt="Course Thumbnail">
+                        <div class="thumbnail-overlay">
+                            <a href="#" class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-box">
+                        <div class="price-header">
+                            <h3>Machine Learning Fundamentals</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.7 (1,245 reviews)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-details">
+                            <div class="original-price">$299</div>
+                            <div class="current-price">$199</div>
+                            <div class="discount-badge">33% OFF</div>
+                        </div>
+                        
+                        <div class="price-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>8 Weeks Intensive Program</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>50+ Hours of Content</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lifetime Access</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Certificate of Completion</span>
+                            </div>
+                        </div>
+                        
+                        <div class="enrollment-count">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="count-text">85% seats filled - Enroll soon!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Curriculum Section -->
+<section class="curriculum-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Course <span class="gradient-text">Curriculum</span></h2>
+            <p>A comprehensive learning path designed by industry experts</p>
+        </div>
+        
+        <div class="curriculum-accordion" data-aos="fade-up" data-aos-delay="100">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="header-content">
+                        <div class="week-badge">Week 1-2</div>
+                        <h3>Introduction to Machine Learning</h3>
+                        <div class="duration">6 Lessons | 8 Hours</div>
+                    </div>
+                    <div class="accordion-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <ul class="lesson-list">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Understanding AI & ML Fundamentals</span>
+                            </div>
+                            <div class="lesson-duration">1h 25m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Python for Data Science Crash Course</span>
+                            </div>
+                            <div class="lesson-duration">2h 10m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Data Preprocessing & Visualization</span>
+                            </div>
+                            <div class="lesson-duration">1h 45m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Hands-on: Data Cleaning Project</span>
+                            </div>
+                            <div class="lesson-duration">2h 30m</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="header-content">
+                        <div class="week-badge">Week 3-4</div>
+                        <h3>Supervised Learning Algorithms</h3>
+                        <div class="duration">8 Lessons | 12 Hours</div>
+                    </div>
+                    <div class="accordion-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <ul class="lesson-list">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Linear & Logistic Regression</span>
+                            </div>
+                            <div class="lesson-duration">2h 15m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Decision Trees & Random Forests</span>
+                            </div>
+                            <div class="lesson-duration">2h 30m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Support Vector Machines</span>
+                            </div>
+                            <div class="lesson-duration">1h 50m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Project: Predictive Model for Housing Prices</span>
+                            </div>
+                            <div class="lesson-duration">3h 15m</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="header-content">
+                        <div class="week-badge">Week 5-6</div>
+                        <h3>Advanced ML Concepts</h3>
+                        <div class="duration">7 Lessons | 10 Hours</div>
+                    </div>
+                    <div class="accordion-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <ul class="lesson-list">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Neural Networks Fundamentals</span>
+                            </div>
+                            <div class="lesson-duration">2h 45m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Model Evaluation & Hyperparameter Tuning</span>
+                            </div>
+                            <div class="lesson-duration">2h 10m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Project: Image Classification with CNN</span>
+                            </div>
+                            <div class="lesson-duration">3h 30m</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <div class="header-content">
+                        <div class="week-badge">Week 7-8</div>
+                        <h3>Capstone Project & Deployment</h3>
+                        <div class="duration">5 Lessons | 15 Hours</div>
+                    </div>
+                    <div class="accordion-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="accordion-content">
+                    <ul class="lesson-list">
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Model Deployment with Flask</span>
+                            </div>
+                            <div class="lesson-duration">2h 20m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Capstone Project: End-to-End ML Application</span>
+                            </div>
+                            <div class="lesson-duration">8h 00m</div>
+                        </li>
+                        <li>
+                            <div class="lesson-info">
+                                <i class="far fa-play-circle"></i>
+                                <span>Career Preparation & Interview Tips</span>
+                            </div>
+                            <div class="lesson-duration">1h 45m</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instructor Section -->
+<section class="instructor-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Meet Your <span class="gradient-text">Instructor</span></h2>
+            <p>Learn from the best in the industry</p>
+        </div>
+        
+        <div class="instructor-profile" data-aos="fade-up" data-aos-delay="100">
+            <div class="instructor-image">
+                <img src="{{ url_for('static', filename='img/instructor.jpg') }}" alt="Dr. Sarah Johnson">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+            <div class="instructor-details">
+                <h3>Akshay S</h3>
+                <div class="instructor-title">Senior AI Researcher at TechCorp</div>
+                <div class="instructor-bio">
+                    <p>With over 10 years of experience in machine learning and artificial intelligence, Dr. Johnson has led research teams at top tech companies and published numerous papers in prestigious journals. Her practical approach to teaching complex concepts makes learning accessible to everyone.</p>
+                    <p>As a former Google Brain researcher, she brings real-world insights and cutting-edge techniques to the classroom.</p>
+                </div>
+                <div class="instructor-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Students Taught</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9/5</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<!-- <section class="enroll-testimonials">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Success <span class="gradient-text">Stories</span></h2>
+            <p>Hear from our alumni who transformed their careers</p>
+        </div>
+        
+        <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>This course completely changed my career trajectory. Within 3 months of completion, I landed a job as an ML Engineer with a 40% salary increase.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="{{ url_for('static', filename='img/testimonial1.jpg') }}" alt="Michael Chen">
+                                    </div>
+                                    <div class="author-info">
+                                        <div class="author-name">Michael Chen</div>
+                                        <div class="author-title">ML Engineer at DataAI</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>The hands-on projects were exactly what I needed to build my portfolio. I got multiple job offers before even completing the course!</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="{{ url_for('static', filename='img/testimonial2.jpg') }}" alt="Priya Patel">
+                                    </div>
+                                    <div class="author-info">
+                                        <div class="author-name">Priya Patel</div>
+                                        <div class="author-title">AI Researcher at NeuroTech</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p>As a complete beginner, I was nervous about learning AI. But the instructors made complex concepts easy to understand with practical examples.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="{{ url_for('static', filename='img/testimonial3.jpg') }}" alt="David Wilson">
+                                    </div>
+                                    <div class="author-info">
+                                        <div class="author-name">David Wilson</div>
+                                        <div class="author-title">Data Scientist at FinCorp</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Enrollment Form Section -->
+<section class="enrollment-form-section">
+    <div class="container">
+        <div class="enrollment-container">
+            <div class="enrollment-header" data-aos="fade-up">
+                <h2>Ready to <span class="gradient-text">Transform</span> Your Career?</h2>
+                <p>Fill out the form below to enroll in the course</p>
+                <div class="enrollment-timer">
+                    <div class="timer-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="timer-text">Offer ends in: <span id="countdown">23:59:59</span></div>
+                </div>
+            </div>
+            
+            <div class="enrollment-form-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="form-card">
+                    <form id="enrollmentForm" class="enrollment-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Current Experience Level</label>
+                            <select id="experience" name="experience" required>
+                                <option value="" disabled selected>Select your level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goals">Learning Goals</label>
+                            <textarea id="goals" name="goals" rows="3" placeholder="What do you hope to achieve with this course?"></textarea>
+                        </div>
+                        
+                        <div class="payment-options">
+                            <div class="payment-header">
+                                <h4>Payment Options</h4>
+                            </div>
+                            
+                            <div class="payment-methods">
+                                <div class="method-option">
+                                    <input type="radio" id="fullPayment" name="paymentMethod" value="full" checked>
+                                    <label for="fullPayment">
+                                        <span class="method-name">One-time Payment</span>
+                                        <span class="method-price">$199</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="method-option">
+                                    <input type="radio" id="installment" name="paymentMethod" value="installment">
+                                    <label for="installment">
+                                        <span class="method-name">3 Monthly Installments</span>
+                                        <span class="method-price">$75 x 3</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="coupon-field">
+                                <input type="text" id="couponCode" name="couponCode" placeholder="Enter coupon code">
+                                <button type="button" class="apply-coupon">Apply</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <div class="total-amount">
+                                <span>Total Amount:</span>
+                                <span class="amount">$199</span>
+                            </div>
+                            
+                            <button type="submit" class="enroll-now-btn">
+                                <span>Enroll Now</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="enrollment-benefits">
+                    <div class="benefits-card">
+                        <h3>What's Included</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>50+ hours of video content</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>10 real-world projects</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Downloadable resources & code</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Certificate of completion</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lifetime access to updates</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Private community access</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>Career support services</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="guarantee-badge">
+                            <div class="guarantee-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="guarantee-text">
+                                <h4>30-Day Money-Back Guarantee</h4>
+                                <p>If you're not satisfied, we'll refund your payment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+            <p>Find answers to common queries about the course</p>
+        </div>
+        
+        <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do I need prior programming experience for this course?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>While prior programming experience is helpful, it's not strictly required. We include a Python crash course in the first week that will get you up to speed with the programming fundamentals needed for the rest of the course. Many of our successful students started with no programming background.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What's the time commitment required for this course?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>The course is designed to be completed in 8 weeks with about 8-10 hours of study per week. However, you'll have lifetime access to all materials, so you can learn at your own pace if needed. The flexible structure makes it suitable for working professionals.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What kind of support will I receive during the course?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>You'll have access to multiple support channels: weekly live Q&A sessions with instructors, a dedicated student community forum where you can ask questions, and email support for technical issues. Our team is committed to helping you succeed throughout your learning journey.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Will this course help me get a job in AI/ML?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! The course includes career preparation modules covering resume building, portfolio development, and interview preparation. Many of our students have successfully transitioned into AI/ML roles after completing the course. We also have partnerships with tech companies that often recruit from our alumni network.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What software/tools will I need for this course?</h3>
+                    <div class="faq-toggle">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>You'll need a computer (Windows, Mac, or Linux) with at least 8GB RAM. We'll guide you through installing Python, Jupyter Notebooks, and other essential libraries (all free and open-source). For the more advanced projects, we recommend using Google Colab which provides free GPU access.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-cta" data-aos="fade-up" data-aos-delay="200">
+            <p>Still have questions? <a href="{{ url_for('contact') }}">Contact our support team</a> for more information.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Enrollment Hero Section */
+    .enroll-hero {
+        position: relative;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(69, 47, 244, 0.9) 0%, rgba(65, 226, 149, 0.9) 100%), 
+                    url('{{ url_for("static", filename="img/ai-bg.jpg") }}') center/cover no-repeat;
+        color: white;
+        padding: 120px 0 80px;
+        overflow: hidden;
+    }
+    
+    .enroll-hero-content {
+        max-width: 800px;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .enroll-hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    .gradient-text {
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .enroll-hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        max-width: 600px;
+    }
+    
+    .enroll-badge {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 10px 20px;
+        border-radius: 50px;
+        margin-top: 20px;
+    }
+    
+    .badge-icon {
+        margin-right: 10px;
+        font-size: 1.5rem;
+        color: var(--secondary);
+    }
+    
+    .hero-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+    }
+    
+    .hero-wave svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Course Details Section */
+    .course-details {
+        padding: 80px 0;
+        position: relative;
+        background-color: var(--dark);
+    }
+    
+    .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .course-highlights {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .highlight-card {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .glow-card {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .glow-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: var(--gradient);
+        z-index: -1;
+        border-radius: 18px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .glow-card:hover::before {
+        opacity: 0.3;
+    }
+    
+    .glow-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .highlight-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(69, 47, 244, 0.2);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: var(--primary);
+    }
+    
+    .highlight-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: white;
+    }
+    
+    .highlight-card p {
+        opacity: 0.8;
+        font-size: 0.95rem;
+    }
+    
+    .course-info {
+        position: relative;
+    }
+    
+    .info-card {
+        position: sticky;
+        top: 100px;
+    }
+    
+    .course-thumbnail {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    
+    .course-thumbnail img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .thumbnail-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .play-btn {
+        width: 80px;
+        height: 80px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        transition: all 0.3s ease;
+    }
+    
+    .play-btn:hover {
+        transform: scale(1.1);
+        background: var(--secondary);
+    }
+    
+    .pricing-box {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .price-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: white;
+    }
+    
+    .rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .rating i {
+        color: #FFD700;
+        margin-right: 5px;
+    }
+    
+    .rating span {
+        margin-left: 10px;
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
+    
+    .price-details {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .original-price {
+        text-decoration: line-through;
+        opacity: 0.7;
+        margin-right: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .current-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        margin-right: 15px;
+    }
+    
+    .discount-badge {
+        background: var(--secondary);
+        color: var(--dark);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    
+    .price-features {
+        margin-bottom: 25px;
+    }
+    
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .feature-item i {
+        color: var(--secondary);
+        margin-right: 10px;
+        font-size: 1.1rem;
+    }
+    
+    .enrollment-count {
+        margin-top: 30px;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: var(--gradient);
+        border-radius: 4px;
+    }
+    
+    .count-text {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        text-align: center;
+    }
+    
+    /* Curriculum Section */
+    .curriculum-section {
+        padding: 80px 0;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-header p {
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.8;
+    }
+    
+    .curriculum-accordion {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .accordion-item {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 12px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .accordion-header:hover {
+        background: rgba(69, 47, 244, 0.1);
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .week-badge {
+        background: var(--primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-right: 20px;
+    }
+    
+    .accordion-header h3 {
+        font-size: 1.2rem;
+        color: white;
+    }
+    
+    .duration {
+        font-size: 0.9rem;
+        opacity: 0.7;
+        margin-top: 5px;
+    }
+    
+    .accordion-toggle {
+        width: 40px;
+        height: 40px;
+        background: rgba(69, 47, 244, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .accordion-toggle i {
+        color: var(--primary);
+        transition: all 0.3s ease;
+    }
+    
+    .accordion-item.active .accordion-toggle {
+        transform: rotate(180deg);
+    }
+    
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .accordion-item.active .accordion-content {
+        max-height: 1000px;
+    }
+    
+    .lesson-list {
+        padding: 0 30px 30px;
+    }
+    
+    .lesson-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .lesson-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .lesson-info {
+        display: flex;
+        align-items: center;
+    }
+    
+    .lesson-info i {
+        margin-right: 15px;
+        color: var(--primary);
+        font-size: 1.2rem;
+    }
+    
+    .lesson-duration {
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+    
+    /* Instructor Section */
+    .instructor-section {
+        padding: 80px 0;
+        background-color: var(--dark);
+    }
+    
+    .instructor-profile {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .instructor-image {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 400px;
+    }
+    
+    .instructor-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .social-links {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+    }
+    
+    .instructor-details {
+        padding-top: 20px;
+    }
+    
+    .instructor-details h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: white;
+    }
+    
+    .instructor-title {
+        font-size: 1.1rem;
+        color: var(--accent);
+        margin-bottom: 20px;
+    }
+    
+    .instructor-bio p {
+        opacity: 0.8;
+        margin-bottom: 15px;
+    }
+    
+    .instructor-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .stat-item {
+        text-align: center;
+        padding: 20px;
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 5px;
+        font-family: 'Orbitron', sans-serif;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+    
+    /* Testimonials Section */
+    .enroll-testimonials {
+        padding: 80px 0;
+        background: linear-gradient(135deg, rgba(69, 47, 244, 0.1) 0%, rgba(65, 226, 149, 0.1) 100%);
+    }
+    
+    .testimonial-slider {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .testimonial-card {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 40px;
+        margin: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+    
+    .testimonial-content {
+        position: relative;
+    }
+    
+    .quote-icon {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        font-size: 3rem;
+        color: var(--primary);
+        opacity: 0.2;
+    }
+    
+    .testimonial-card p {
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        position: relative;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+    
+    .author-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+        border: 3px solid var(--primary);
+    }
+    
+    .author-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .author-name {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: white;
+    }
+    
+    .author-title {
+        opacity: 0.7;
+        font-size: 0.9rem;
+    }
+    
+    .swiper-pagination-bullet {
+        background: white;
+        opacity: 0.5;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: var(--primary);
+        opacity: 1;
+    }
+    
+    /* Enrollment Form Section */
+    .enrollment-form-section {
+        padding: 80px 0;
+        position: relative;
+        background-color: var(--dark);
+    }
+    /* Testimonials Section */
+.testimonial-slider {
+    position: relative;
+    padding: 20px 0 60px; /* Extra space for pagination */
+}
+
+.testimonial-slider .swiper-container {
+    overflow: visible;
+}
+
+.swiper-pagination {
+    position: relative;
+    bottom: 0;
+    margin-top: 30px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    margin: 0 8px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: var(--primary);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+    .enrollment-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .enrollment-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .enrollment-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .enrollment-header p {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        max-width: 700px;
+        margin: 0 auto 20px;
+    }
+    
+    .enrollment-timer {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 20px;
+        border-radius: 50px;
+    }
+    
+    .timer-icon {
+        margin-right: 10px;
+        color: var(--secondary);
+    }
+    
+    .timer-text {
+        font-weight: 500;
+    }
+    
+    #countdown {
+        color: var(--secondary);
+        font-family: 'Orbitron', sans-serif;
+    }
+    
+    .enrollment-form-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .form-card {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .enrollment-form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 500;
+        color: white;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(69, 47, 244, 0.3);
+    }
+    
+    .payment-options {
+        margin: 30px 0;
+    }
+    
+    .payment-header {
+        margin-bottom: 20px;
+    }
+    
+    .payment-header h4 {
+        font-size: 1.2rem;
+        color: white;
+    }
+    
+    .payment-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .method-option {
+        position: relative;
+    }
+    
+    .method-option input {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    .method-option label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .method-option input:checked + label {
+        background: rgba(69, 47, 244, 0.2);
+        border: 1px solid var(--primary);
+    }
+    
+    .method-name {
+        font-weight: 500;
+        color: white;
+    }
+    
+    .method-price {
+        font-weight: 600;
+        color: var(--secondary);
+    }
+    
+    .coupon-field {
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    .coupon-field input {
+        flex: 1;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px 0 0 8px;
+        color: white;
+    }
+    
+    .apply-coupon {
+        padding: 0 20px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .apply-coupon:hover {
+        background: var(--secondary);
+    }
+    
+    .form-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .total-amount {
+        font-size: 1.1rem;
+        color: white;
+    }
+    
+    .amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--secondary);
+        margin-left: 10px;
+    }
+    
+    .enroll-now-btn {
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+        background: var(--gradient);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(69, 47, 244, 0.4);
+    }
+    
+    .enroll-now-btn i {
+        margin-left: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .enroll-now-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(69, 47, 244, 0.6);
+    }
+    
+    .enroll-now-btn:hover i {
+        transform: translateX(5px);
+    }
+    
+    .enrollment-benefits {
+        position: sticky;
+        top: 100px;
+    }
+    
+    .benefits-card {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .benefits-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        color: white;
+    }
+    
+    .benefits-list {
+        list-style: none;
+    }
+    
+    .benefits-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .benefits-list i {
+        color: var(--secondary);
+        margin-right: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .guarantee-badge {
+        display: flex;
+        align-items: center;
+        background: rgba(65, 226, 149, 0.1);
+        border: 1px solid rgba(65, 226, 149, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .guarantee-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(65, 226, 149, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        font-size: 1.5rem;
+        color: var(--secondary);
+    }
+    
+    .guarantee-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: white;
+    }
+    
+    .guarantee-text p {
+        opacity: 0.8;
+        font-size: 0.9rem;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+        padding: 80px 0;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+    }
+    
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .faq-item {
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 12px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .faq-question:hover {
+        background: rgba(69, 47, 244, 0.1);
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+        color: white;
+        margin-right: 20px;
+    }
+    
+    .faq-toggle {
+        width: 30px;
+        height: 30px;
+        background: rgba(69, 47, 244, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .faq-toggle i {
+        color: var(--primary);
+        transition: all 0.3s ease;
+    }
+    
+    .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+    }
+    
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 0 30px 30px;
+    }
+    
+    .faq-answer p {
+        opacity: 0.8;
+        line-height: 1.6;
+    }
+    
+    .faq-cta {
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .faq-cta a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .faq-cta a:hover {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+    .testimonial-slider .swiper-container {
+    padding: 20px 0 40px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1rem;
+}
+    
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+        .enroll-hero h1 {
+            font-size: 3rem;
+        }
+        
+        .instructor-profile {
+            grid-template-columns: 250px 1fr;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .details-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .course-highlights {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .info-card {
+            position: static;
+        }
+        
+        .instructor-profile {
+            grid-template-columns: 1fr;
+        }
+        
+        .instructor-image {
+            height: 300px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .enrollment-form-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .enrollment-benefits {
+            margin-top: 40px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .enroll-hero {
+            min-height: 400px;
+            padding: 100px 0 60px;
+        }
+        
+        .enroll-hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .course-highlights {
+            grid-template-columns: 1fr;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+        }
+        
+        .accordion-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .header-content {
+            margin-bottom: 15px;
+        }
+        
+        .accordion-toggle {
+            align-self: flex-end;
+        }
+        
+        .instructor-stats {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .enroll-hero h1 {
+            font-size: 2rem;
+        }
+        
+        .enroll-badge {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .badge-icon {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        
+        .form-footer {
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .total-amount {
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    // Initialize AOS Animation
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+    
+    // Accordion Functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            item.classList.toggle('active');
+            
+            // Close other accordion items
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+        });
+    });
+    
+    // FAQ Toggle Functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+        });
+    });
+    
+    // Countdown Timer
+    function updateCountdown() {
+        const now = new Date();
+        const midnight = new Date();
+        midnight.setHours(24, 0, 0, 0);
+        
+        const diff = midnight - now;
+        
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById('countdown').textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    
+    // Payment Method Selection
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'full') {
+                document.querySelector('.amount').textContent = '$199';
+            } else if (this.value === 'installment') {
+                document.querySelector('.amount').textContent = '$225';
+            }
+        });
+    });
+    
+    // Testimonial Slider
+   // Initialize Swiper after DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonialSwiper = new Swiper('.testimonial-slider .swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        effect: 'slide',
+        speed: 800,
+    });
+    
+    // Reinitialize AOS after Swiper loads to ensure animations work
+    AOS.refresh();
+});
+    
+    // Form Submission
+    document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        alert('Thank you for your enrollment! We will contact you shortly with further details.');
+        this.reset();
+    });
+</script>
+
+{% endblock %}

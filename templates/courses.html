@@ -1,0 +1,1361 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<div class="courses-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Master AI & Machine Learning</h1>
+            <p class="hero-subtitle">Transform your career with our cutting-edge courses designed by industry experts</p>
+            <div class="hero-search">
+                <input type="text" placeholder="Search courses..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Breadcrumb Navigation -->
+<nav class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('courses') }}">Home</a></li>
+            <li class="breadcrumb-item active">Courses</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- Course Filter Section -->
+<div class="course-filters">
+    <div class="container">
+        <div class="filter-options">
+            <div class="filter-group">
+                <label for="category-filter">Category:</label>
+                <select id="category-filter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="foundations">AI Foundations</option>
+                    <option value="machine-learning">Machine Learning</option>
+                    <option value="deep-learning">Deep Learning</option>
+                    <option value="business">Business AI</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="level-filter">Level:</label>
+                <select id="level-filter" class="filter-select">
+                    <option value="all">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-filter">Sort By:</label>
+                <select id="sort-filter" class="filter-select">
+                    <option value="popular">Most Popular</option>
+                    <option value="newest">Newest</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Courses Grid Section -->
+<section class="courses-section">
+    <div class="container">
+        <div class="courses-grid">
+            <!-- Course 1 -->
+            <div class="course-card" data-category="foundations" data-level="beginner" data-rating="4.8">
+                <div class="course-card-header">
+                    <div class="course-badge beginner">Beginner</div>
+                    <div class="course-image">
+                        <img src="https://softivuslab.com/wp/intellicon/wp-content/uploads/2024/07/capbi1.jpg" alt="Foundations of AI">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">Technology</div>
+                    <h3 class="course-title">Foundations of Artificial Intelligence</h3>
+                    <p class="course-description">Begin where intelligence meets intention. Dive into the essential pillars of AI — exploring how machines think, reason, and learn.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>6 Weeks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>24 Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        <li>Basic Python Programming</li>
+                        <li>Introduction to Machine Learning</li>
+                        <li>Hands-on with Pandas Library</li>
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8 (1,250)</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('course_details') }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card" data-category="machine-learning" data-level="intermediate" data-rating="4.9">
+                <div class="course-card-header">
+                    <div class="course-badge intermediate">Intermediate</div>
+                    <div class="course-image">
+                        <img src="https://softivuslab.com/wp/intellicon/wp-content/uploads/2024/07/capabi2.jpg" alt="Machine Learning with Python">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">Machine Learning</div>
+                    <h3 class="course-title">Machine Learning with Python</h3>
+                    <p class="course-description">Dive into supervised, unsupervised, and reinforcement learning using hands-on Python projects.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8 Weeks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>32 Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        <li>Core Machine Learning Algorithms</li>
+                        <li>Supervised, Unsupervised & Reinforcement Learning</li>
+                        <li>Real-World Python Projects</li>
+                        <li>Model Evaluation & Optimization Techniques</li>
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (980)</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('course_details2') }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card" data-category="deep-learning" data-level="advanced" data-rating="4.7">
+                <div class="course-card-header">
+                    <div class="course-badge advanced">Advanced</div>
+                    <div class="course-image">
+                        <img src="https://softivuslab.com/wp/intellicon/wp-content/uploads/2024/07/capabi3.jpg" alt="Deep Learning & Neural Networks">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">Deep Learning</div>
+                    <h3 class="course-title">Deep Learning & Neural Networks</h3>
+                    <p class="course-description">Master deep learning architectures like CNNs, RNNs, and GANs using TensorFlow and PyTorch.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>10 Weeks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>40 Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        <li>Convolutional Neural Networks (CNNs)</li>
+                        <li>Recurrent Neural Networks (RNNs) & LSTMs</li>
+                        <li>Generative Adversarial Networks (GANs)</li>
+                        <li>Transformers & Attention Mechanisms</li>
+                        <li>RAG Pipelines (Retrieval-Augmented Generation)</li>
+                        <li>TensorFlow & PyTorch Implementation</li>
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7 (750)</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('course_details3') }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="course-card" data-category="machine-learning deep-learning" data-level="advanced" data-rating="4.9">
+                <div class="course-card-header">
+                    <div class="course-badge advanced">Advanced</div>
+                    <div class="course-image">
+                        <img src="https://softivuslab.com/wp/intellicon/wp-content/uploads/2024/07/bl9.jpg" alt="ML & DL Masterclass">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">Masterclass</div>
+                    <h3 class="course-title">Machine Learning & Deep Learning Masterclass</h3>
+                    <p class="course-description">Explore the full data science lifecycle — from data wrangling to predictive modeling.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>12 Weeks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>48 Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        <li>Data Cleaning & Feature Engineering</li>
+                        <li>Exploratory Data Analysis & Visualization</li>
+                        <li>Statistical Foundations & Hypothesis Testing</li>
+                        <li>Machine Learning Algorithms</li>
+                        <li>Deep Learning with TensorFlow & PyTorch</li>
+                        <li>Model Deployment & Performance Tuning</li>
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (620)</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('course_details4') }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 5 -->
+            <div class="course-card" data-category="machine-learning deep-learning" data-level="intermediate" data-rating="4.6">
+                <div class="course-card-header">
+                    <div class="course-badge intermediate">Intermediate</div>
+                    <div class="course-image">
+                        <img src="https://softivuslab.com/wp/intellicon/wp-content/uploads/2024/07/bl6.jpg" alt="Python ML & Deep Learning">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">Technology</div>
+                    <h3 class="course-title">Python ML & Deep Learning</h3>
+                    <p class="course-description">Learn to manage and analyze massive datasets using tools like Hadoop, Spark, and cloud platforms.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9 Weeks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>36 Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        <li>Python for Data Science & ML</li>
+                        <li>Scalable Data Processing with Hadoop & Spark</li>
+                        <li>Model Building & Tuning with Scikit-learn & TensorFlow</li>
+                        <li>Big Data Integration with AWS, GCP & Azure</li>
+                        <li>Deep Learning Pipelines for Real-Time Analytics</li>
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.6 (890)</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('course_details5') }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course 6 -->
+            <div class="course-card" data-category="business" data-level="intermediate" data-rating="4.5">
+                <div class="course-card-header">
+                    <div class="course-badge intermediate">Intermediate</div>
+                    <div class="course-image">
+                        <img src="https://softivuslab.com/wp/intellicon/wp-content/uploads/2024/06/c6.png" alt="AI Master Class">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">Business AI</div>
+                    <h3 class="course-title">AI Master Class</h3>
+                    <p class="course-description">Leverage AI tools and analytics for smarter business strategy, marketing automation, and operational decisions.</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>7 Weeks</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>28 Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        <li>AI-Powered Business Intelligence Tools</li>
+                        <li>Marketing Automation with Predictive Analytics</li>
+                        <li>Customer Segmentation & Personalization</li>
+                        <li>Operational Decision-Making with ML Models</li>
+                        <li>Real-Time Dashboards using AI & NLP</li>
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.5 (540)</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('course_details6') }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <!-- <div class="courses-pagination">
+            <a href="#" class="page-nav disabled"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" class="page-number active">1</a>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <span class="page-ellipsis">...</span>
+            <a href="#" class="page-number">8</a>
+            <a href="#" class="page-nav"><i class="fas fa-chevron-right"></i></a>
+        </div> -->
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<div class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Start Your AI Journey?</h2>
+            <p>Join thousands of students who have transformed their careers with our cutting-edge AI and Machine Learning courses.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Browse All Courses</a>
+                
+                 <a href="tel:+917411668259" class="btn btn-primary phone-btn" title="Call Us">Speak to an Advisor</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <div class="video-container">
+            <iframe id="videoFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Styles for Courses Page -->
+<style>
+    /* Hero Section */
+    .courses-hero {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
+                    url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .courses-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(69, 47, 244, 0.3), rgba(65, 226, 149, 0.3));
+        z-index: 1;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        color: white;
+    }
+    
+    .hero-search {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .search-input {
+        flex: 1;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 50px 0 0 50px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: white;
+        outline: none;
+        font-size: 1rem;
+    }
+    
+    .search-btn {
+        padding: 0 25px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 0 50px 50px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .search-btn:hover {
+        background: var(--secondary);
+    }
+    
+    /* Breadcrumb Navigation */
+    .breadcrumb-nav {
+        padding: 15px 0;
+        background: rgba(30, 41, 59, 0.5);
+    }
+    
+    .breadcrumb {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb-item {
+        margin-right: 10px;
+    }
+    
+    .breadcrumb-item:not(:last-child)::after {
+        content: '>';
+        margin-left: 10px;
+        color: var(--accent);
+    }
+    
+    .breadcrumb-item a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+    
+    .breadcrumb-item.active {
+        color: white;
+        opacity: 0.7;
+    }
+    
+    /* Course Filters */
+    .course-filters {
+        padding: 20px 0;
+        background: rgba(30, 41, 59, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .filter-options {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .filter-group label {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+    
+    .filter-select {
+        padding: 10px 15px;
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-select:hover {
+        border-color: var(--primary);
+    }
+    
+    .filter-select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(69, 47, 244, 0.3);
+    }
+    
+    /* Courses Grid */
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 50px 0;
+    }
+    
+    .course-card {
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+    
+    .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: var(--primary);
+    }
+    
+    .course-card-header {
+        position: relative;
+    }
+    
+    .course-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 2;
+    }
+    
+    .course-badge.beginner {
+        background: var(--secondary);
+        color: var(--dark);
+    }
+    
+    .course-badge.intermediate {
+        background: var(--primary);
+        color: white;
+    }
+    
+    .course-badge.advanced {
+        background: #FF6B6B;
+        color: white;
+    }
+    
+    .course-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .course-card:hover .course-image img {
+        transform: scale(1.1);
+    }
+    
+    .course-play-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .course-card:hover .course-play-overlay {
+        opacity: 1;
+    }
+    
+    .video-play-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .video-play-btn:hover {
+        transform: scale(1.1);
+        background: var(--secondary);
+    }
+    
+    .course-card-body {
+        padding: 20px;
+    }
+    
+    .course-category {
+        font-size: 0.8rem;
+        color: var(--accent);
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .course-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: white;
+    }
+    
+    .course-description {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+        opacity: 0.8;
+        line-height: 1.5;
+    }
+    
+    .course-features {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+    }
+    
+    .course-outcomes {
+        margin: 15px 0;
+        padding-left: 20px;
+        list-style-type: none;
+    }
+    
+    .course-outcomes li {
+        position: relative;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+    
+    .course-outcomes li::before {
+        content: '';
+        position: absolute;
+        left: -20px;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--primary);
+    }
+    
+    .course-card-footer {
+        padding: 15px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .course-rating {
+        display: flex;
+        align-items: center;
+    }
+    
+    .stars {
+        color: #FFD700;
+        margin-right: 5px;
+    }
+    
+    .stars span {
+        font-size: 0.85rem;
+        color: white;
+        opacity: 0.7;
+        margin-left: 5px;
+    }
+    
+    .course-actions {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background: var(--secondary);
+        transform: translateY(-2px);
+    }
+    
+    .btn-outline {
+        background: transparent;
+        color: white;
+        border: 1px solid var(--primary);
+    }
+    
+    .btn-outline:hover {
+        background: rgba(69, 47, 244, 0.1);
+    }
+    
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-icon:hover {
+        background: var(--primary);
+        transform: translateY(-2px);
+    }
+    
+    .wishlist-btn.active {
+        color: #FF6B6B;
+    }
+    
+    /* Pagination */
+    .courses-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 40px;
+    }
+    
+    .page-nav, .page-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .page-nav:hover, .page-number:hover {
+        background: var(--primary);
+    }
+    
+    .page-number.active {
+        background: var(--primary);
+        font-weight: 600;
+    }
+    
+    .page-nav.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    
+    .page-ellipsis {
+        color: white;
+        opacity: 0.7;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, rgba(69, 47, 244, 0.1), rgba(65, 226, 149, 0.1));
+        text-align: center;
+        position: relative;
+    }
+    
+    .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        color: white;
+    }
+    
+    .cta-content p {
+        margin-bottom: 30px;
+        opacity: 0.8;
+        font-size: 1.1rem;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    /* Video Modal */
+    .video-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .video-modal.active {
+        display: flex;
+    }
+    
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+    }
+    
+    .modal-content {
+        position: relative;
+        width: 80%;
+        max-width: 900px;
+        background: var(--dark);
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 2;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 3;
+        transition: all 0.3s ease;
+    }
+    
+    .modal-close:hover {
+        background: var(--primary);
+        transform: rotate(90deg);
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+        .courses-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .filter-options {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .filter-group {
+            width: 100%;
+        }
+        
+        .filter-select {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .courses-hero {
+            padding: 100px 0 60px;
+        }
+        .hero-content{
+            margin-top: 20px;
+        }
+        
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .courses-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .course-card:hover {
+            transform: none;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+        }
+        
+        .btn {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .hero-search {
+            flex-direction: column;
+        }
+        
+        .search-input {
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        
+        .search-btn {
+            border-radius: 50px;
+            padding: 12px;
+        }
+        
+        .modal-content {
+            width: 95%;
+        }
+    }
+    /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+    /* Hero Section */
+    .courses-hero {
+        padding: 80px 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-search {
+        flex-direction: column;
+    }
+    
+    .search-input {
+        border-radius: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .search-btn {
+        border-radius: 50px;
+        padding: 12px;
+    }
+    
+    /* Course Cards */
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 0;
+    }
+    
+    .course-card {
+        max-width: 100%;
+    }
+    
+    .course-card:hover {
+        transform: none;
+    }
+    
+    /* Filters */
+    .filter-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    /* Course Card Content */
+    .course-features {
+        flex-wrap: wrap;
+    }
+    
+    .course-outcomes li {
+        font-size: 0.85rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Pagination */
+    .courses-pagination {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .page-nav, .page-number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    /* Hero Section */
+    .courses-hero {
+        padding: 60px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    /* Course Card Footer */
+    .course-card-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .course-actions {
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    /* Video Modal */
+    .modal-content {
+        width: 95%;
+    }
+    
+    /* Breadcrumb */
+    .breadcrumb {
+        font-size: 0.8rem;
+    }
+}
+
+/* Very small devices (320px and below) */
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .course-title {
+        font-size: 1.1rem;
+    }
+    
+    .course-description {
+        font-size: 0.85rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<!-- Additional Scripts for Courses Page -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Video Modal Functionality
+        const videoBtns = document.querySelectorAll('.video-play-btn');
+        const videoModal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+        const modalClose = document.querySelector('.modal-close');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        
+        videoBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const videoUrl = this.getAttribute('href');
+                const embedUrl = videoUrl.replace('watch?v=', 'embed/');
+                
+                videoFrame.src = embedUrl;
+                videoModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close modal
+        function closeModal() {
+            videoFrame.src = '';
+            videoModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+        
+        // Filter Functionality
+        const categoryFilter = document.getElementById('category-filter');
+        const levelFilter = document.getElementById('level-filter');
+        const sortFilter = document.getElementById('sort-filter');
+        const courseCards = document.querySelectorAll('.course-card');
+        
+        function filterCourses() {
+            const categoryValue = categoryFilter.value;
+            const levelValue = levelFilter.value;
+            
+            courseCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const cardLevel = card.getAttribute('data-level');
+                
+                const categoryMatch = categoryValue === 'all' || cardCategory.includes(categoryValue);
+                const levelMatch = levelValue === 'all' || cardLevel === levelValue;
+                
+                if (categoryMatch && levelMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Sort courses
+            const visibleCards = Array.from(courseCards).filter(card => card.style.display !== 'none');
+            
+            if (sortFilter.value === 'rating') {
+                visibleCards.sort((a, b) => {
+                    return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
+                });
+            } else if (sortFilter.value === 'newest') {
+                // Assuming newer courses have higher numbers in their data attributes
+                visibleCards.sort((a, b) => {
+                    return parseInt(b.getAttribute('data-id')) - parseInt(a.getAttribute('data-id'));
+                });
+            }
+            
+            // Re-append sorted cards
+            const coursesGrid = document.querySelector('.courses-grid');
+            visibleCards.forEach(card => {
+                coursesGrid.appendChild(card);
+            });
+        }
+        
+        categoryFilter.addEventListener('change', filterCourses);
+        levelFilter.addEventListener('change', filterCourses);
+        sortFilter.addEventListener('change', filterCourses);
+        
+        // Wishlist Functionality
+        const wishlistBtns = document.querySelectorAll('.wishlist-btn');
+        
+        wishlistBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                
+                if (this.classList.contains('active')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    // Here you would add to wishlist logic
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    // Here you would remove from wishlist logic
+                }
+            });
+        });
+        
+        // Initialize tooltips
+        tippy('[title]', {
+            theme: 'light-border',
+            animation: 'scale',
+            duration: 200,
+            arrow: true
+        });
+    });
+</script>
+{% endblock %}
