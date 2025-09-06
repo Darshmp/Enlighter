@@ -256,41 +256,49 @@
         margin-bottom: 60px;
     }
 
-    .footer-logo {
-        margin-bottom: 20px;
-    }
+.footer-about {
+    display: flex;
+    flex-direction: column;
+}
 
-    .footer-logo img {
-        height: 50px;
-    }
+.footer-logo {
+    margin-bottom: 20px;
+}
 
-    .footer-about p {
-        opacity: 0.7;
-        margin-bottom: 20px;
-        font-size: 0.95rem;
-    }
+.footer-logo img {
+    height: 50px;
+}
 
-    .social-links {
-        display: flex;
-        gap: 15px;
-    }
+.footer-about p {
+    opacity: 0.7;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    order: 1;
+}
 
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        transition: all 0.3s ease;
-    }
+.social-links {
+    display: flex;
+    gap: 15px;
+    order: 2;
+    margin-top: 20px;
+}
 
-    .social-links a:hover {
-        background: var(--primary);
-        transform: translateY(-3px);
-    }
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
 
     .footer-links h3 {
         font-size: 1.3rem;
@@ -430,7 +438,20 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
-
+@media (max-width: 992px) {
+    html.menu-open {
+        overflow: hidden !important;
+        position: fixed; /* Prevent iOS bounce */
+        width: 100%; /* Fix layout shift */
+    }
+    .nav-menu {
+        right: -100% !important;
+        transition: right 0.3s ease !important;
+    }
+    .nav-menu.active {
+        right: 0 !important;
+    }
+}
     @media (max-width: 992px) {
         .nav-menu {
             position: fixed;
@@ -557,6 +578,76 @@
             font-size: 16px;
         }
     }
+/* User dropdown styles */
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .user-welcome {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: small;
+            color: #200d70;
+            background-color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .user-welcome:hover {
+            background-color: rgba(69, 47, 244, 0.1);
+        }
+        
+        .user-dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1001;
+            border-radius: 8px;
+            overflow: hidden;
+            display: none;
+            margin-top: 10px;
+        }
+        
+        .user-dropdown-content a {
+            color: #200d70;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .user-dropdown-content a:hover {
+            background-color: rgba(69, 47, 244, 0.1);
+            padding-left: 20px;
+        }
+        
+        .user-dropdown.active .user-dropdown-content {
+            display: block;
+        }
+        
+        /* Adjust header for dropdown */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+           /* Hide login/register from nav when logged in */
+        .nav-menu a[href*="login"],
+        .nav-menu a[href*="register"],
+        .nav-menu a[href*="dashboard"],
+        .nav-menu a[href*="logout"] {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -578,6 +669,22 @@
                 <img src="{{ url_for('static', filename='img/enlighter.jpeg') }}" alt="Logo">
             </div>
             
+            <div class="user-dropdown" id="userDropdown">
+                <div class="user-welcome">
+                    <span>Welcome, {{ session.user_name if session.user_id else 'Guest' }}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-dropdown-content">
+                    {% if session.user_id %}
+                        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                        <a href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars" id="menuIcon"></i>
             </button>
@@ -804,41 +911,60 @@
         }
         
         // Mobile Menu Toggle
-        function mobileMenuToggle() {
-            const mobileBtn = document.getElementById('mobileMenuBtn');
-            const menuIcon = document.getElementById('menuIcon');
-            const navMenu = document.getElementById('navMenu');
+       function mobileMenuToggle() {
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const menuIcon = mobileBtn.querySelector('i');
+    const navMenu = document.getElementById('navMenu');
+    const html = document.documentElement; // Target <html> instead of <body>
+
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        navMenu.style.right = '-100%';
+        html.style.overflow = 'auto'; // Apply to <html>
+        html.classList.remove('menu-open');
+    };
+
+    const openMenu = () => {
+        navMenu.classList.add('active');
+        navMenu.style.right = '0';
+        html.style.overflow = 'hidden'; // Lock scroll on <html>
+        html.classList.add('menu-open');
+    };
+
+    mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    // Close when clicking outside or on links
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && e.target !== mobileBtn) closeMenu();
+    });
+    navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+}
+// User dropdown functionality
+        function initUserDropdown() {
+            const userDropdown = document.getElementById('userDropdown');
             
-            mobileBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-                
-                // Toggle between hamburger and close icon
-                if (navMenu.classList.contains('active')) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-times');
-                } else {
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-            });
-            
-            // Close menu when clicking on links
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
+            if (userDropdown) {
+                userDropdown.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
                 });
-            });
+                
+                // Close dropdown when clicking elsewhere
+                document.addEventListener('click', function(e) {
+                    if (!userDropdown.contains(e.target)) {
+                        userDropdown.classList.remove('active');
+                    }
+                });
+            }
         }
-        
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             headerScrollEffect();
             mobileMenuToggle();
+            initUserDropdown(); 
         });
     </script>
     

@@ -1,0 +1,522 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin-top: 70px;
+            padding-top: 30px;
+            background-color: #f8f9fa;
+            color: #354764;
+        }
+        .course-header{
+            color:rgba(245, 222, 179, 0.757) ;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0px auto;
+            padding: 15px;
+        }
+        
+        .course-content {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .course-image {
+            flex: 1;
+        }
+        
+        .course-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-details {
+            flex: 1;
+        }
+        
+        .course-category {
+            display: inline-block;
+            background-color: #452FF4;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .course-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(232, 229, 225, 0.811);
+        }
+        
+        b{
+            color: rgba(255, 250, 250, 0.903);
+            opacity: 0.5;
+        }
+        
+        .course-features h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .course-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+        }
+        
+        .course-features li:before {
+            content: "✓";
+            color: #41E295;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .course-outcomes {
+            margin: 30px 0;
+        }
+        
+        .course-outcomes h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-outcomes ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .course-outcomes li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .course-outcomes li:before {
+            content: "•";
+            color: #452FF4;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+        
+        .course-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(69, 47, 244, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+        
+        .meta-item i {
+            color: #452FF4;
+            font-size: 18px;
+        }
+        
+        .enroll-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .enroll-btn {
+            background-color: #452FF4;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .enroll-btn:hover {
+            background-color: #41E295;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(65, 226, 149, 0.3);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #452FF4;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 350px) and (max-width: 786px) {
+            .course-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .course-image {
+                width: 100%;
+                flex: none;
+            }
+            
+            .course-image img {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+                object-fit: cover;
+            }
+            
+            .course-details {
+                width: 100%;
+                flex: none;
+            }
+            
+            .course-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+            
+            .course-description {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            
+            .course-features h3 {
+                font-size: 20px;
+            }
+            
+            .enroll-section {
+                padding: 30px 20px;
+            }
+            
+            .enroll-btn {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            
+            .container {
+                padding-top: 0px;
+            }
+            
+            .course-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style> -->
+
+
+     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin-top: 70px;
+            padding-top: 30px;
+            background-color: #f8f9fa;
+            color: #354764;
+        }
+        .course-header{
+            color:rgba(245, 222, 179, 0.757) ;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0px auto;
+        
+            padding: -15px;
+        }
+        
+        
+        
+        .course-content {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .course-image {
+            flex: 1;
+        }
+        
+        .course-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .course-details {
+            flex: 1;
+        }
+        
+        .course-category {
+            display: inline-block;
+            background-color: #452FF4;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .course-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(232, 229, 225, 0.811);
+        
+        }
+        b{
+        color: rgba(255, 250, 250, 0.903);
+        opacity: 0.5;
+    }
+        
+        .course-features h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #354764;
+        }
+        
+        .course-features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .course-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+        }
+        
+        .course-features li:before {
+            content: "✓";
+            color: #41E295;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .enroll-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .enroll-btn {
+            background-color: #452FF4;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .enroll-btn:hover {
+            background-color: #41E295;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(65, 226, 149, 0.3);
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #452FF4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 350px) and (max-width: 786px) {
+    .course-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .course-image {
+        width: 100%;
+        flex: none;
+    }
+    
+    .course-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+    
+    .course-details {
+        width: 100%;
+        flex: none;
+    }
+    
+    .course-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .course-description {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .course-features h3 {
+        font-size: 20px;
+    }
+    
+    .enroll-section {
+        padding: 30px 20px;
+    }
+    
+    .enroll-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    .container {
+        padding-top: 0px;
+    }
+    
+ 
+}
+    </style>
+
+     <div class="course-header">
+        <div class="container">
+            <h1 id="course-title">Course Details</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href="{{ url_for('courses') }}" class="back-btn ">
+            <i class="fas fa-arrow-left"></i> Back to All Courses
+        </a>
+
+        <div class="course-content">
+            <div class="course-image">
+                <img src="{{ course.image_url }}" alt="{{ course.title }}">
+            </div>
+            
+            <div class="course-details">
+                <span class="course-category">Category</span>  <b>: {{ course.category }}</b>
+                
+                <h2 class="course-title">{{ course.title }}</h2>
+                
+                <!-- <div class="course-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>{{ course.duration }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-video"></i>
+                        <span>{{ course.lessons }} Lessons</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificate Included</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-signal"></i>
+                        <span>{{ course.level|title }} Level</span>
+                    </div>
+                </div> -->
+                
+                <p class="course-description">{{ course.description }}</p>
+                
+                <!-- <div class="course-features">
+                    <h3>What You'll Get</h3>
+                    <ul>
+                        {% for feature in course.features|from_json %}
+                        <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </div> -->
+                
+                <!-- <div class="course-outcomes">
+                    <h3>Learning Outcomes</h3>
+                    <ul>
+                        {% for outcome in course.outcomes|from_json %}
+                        <li>{{ outcome }}</li>
+                        {% endfor %}
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="enroll-section">
+            <h2>Ready to Start Learning?</h2>
+            <p>Join thousands of students who have transformed their careers with our courses</p>
+            
+            <!-- <div class="course-rating" style="margin: 20px 0;">
+                <div class="stars">
+                    {% for i in range(5) %}
+                        {% if i < course.rating|int %}
+                            <i class="fas fa-star"></i>
+                        {% elif i < course.rating %}
+                            <i class="fas fa-star-half-alt"></i>
+                        {% else %}
+                            <i class="far fa-star"></i>
+                        {% endif %}
+                    {% endfor %}
+                    <span>{{ course.rating }} ({{ course.reviews_count }} reviews)</span>
+                </div>
+            </div> -->
+            
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+    </div>
+
+{% endblock %}

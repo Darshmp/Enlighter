@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Enlighter Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #452FF4;
+            --secondary: #41E295;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --accent: #A58EFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Styles */
+        .admin-sidebar {
+            width: 250px;
+            background: var(--dark);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .admin-sidebar .logo {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-sidebar .logo img {
+            height: 40px;
+        }
+        
+        .admin-sidebar ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+        
+        .admin-sidebar ul li {
+            margin-bottom: 5px;
+        }
+        
+        .admin-sidebar ul li a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 12px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .admin-sidebar ul li a:hover,
+        .admin-sidebar ul li a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .admin-sidebar ul li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Main Content Styles */
+        .admin-main {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .admin-header h1 {
+            font-size: 24px;
+            color: var(--dark);
+        }
+        
+        .admin-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(69, 47, 244, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #341FDB;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .help-text {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 992px) {
+            .admin-sidebar {
+                width: 200px;
+            }
+            
+            .admin-main {
+                margin-left: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .admin-container {
+                flex-direction: column;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .admin-main {
+                margin-left: 0;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        @media (max-width: 570px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .admin-header h1 {
+        font-size: 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .btn-sm {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .admin-card {
+        padding: 15px;
+    }
+    
+    .admin-card h2 {
+        font-size: 18px;
+    }
+}
+
+/* Media Query for 476px */
+@media (max-width: 476px) {
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 0;
+    }
+    
+    .admin-sidebar .logo {
+        padding: 15px;
+    }
+    
+    .admin-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    .admin-sidebar ul li {
+        margin: 5px;
+    }
+    
+    .admin-sidebar ul li a {
+        padding: 8px 12px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 5px;
+    }
+    
+    .admin-sidebar ul li a:hover,
+    .admin-sidebar ul li a.active {
+        border-left: none;
+        border-bottom: 3px solid var(--primary);
+    }
+    
+    .admin-main {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        min-width: 600px; /* Force horizontal scroll on small devices */
+    }
+    
+    th, td {
+        white-space: nowrap;
+    }
+    
+    .user-detail-card {
+        padding: 20px;
+    }
+    
+    .user-detail-value {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query for 350px */
+@media (max-width: 350px) {
+    .admin-sidebar ul li a {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+    
+    .admin-sidebar ul li a i {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+    
+    .admin-header h1 {
+        font-size: 18px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .admin-card h2 {
+        font-size: 16px;
+    }
+    
+    .verified-badge,
+    .not-verified {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+    
+    .btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .user-detail-card {
+        padding: 15px;
+    }
+    
+    .user-detail-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .user-detail-label {
+        font-size: 0.9rem;
+    }
+    
+    .user-detail-value {
+        font-size: 0.95rem;
+    }
+}
+
+/* Additional utility classes for extra small screens */
+@media (max-width: 400px) {
+    .hidden-xs {
+        display: none !important;
+    }
+    
+    .text-xs-center {
+        text-align: center;
+    }
+    
+    .flex-xs-column {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/enlighter.jpeg') }}" alt="Enlighter Tech">
+            </div>
+            
+            <ul>
+                <li><a href="{{ url_for('admin_dashboard') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="{{ url_for('admin_courses') }}" class="active"><i class="fas fa-book"></i> Courses</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Back to Site</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="admin-main">
+            <div class="admin-header">
+                <h1>{{ title }}</h1>
+                <div>
+                    <span>Welcome, Admin</span>
+                </div>
+            </div>
+            
+            <div class="admin-card">
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="title">Course Title</label>
+                        <input type="text" id="title" name="title" class="form-control" 
+                               value="{{ course.title if course else '' }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" class="form-control" required>{{ course.description if course else '' }}</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <input type="text" id="category" name="category" class="form-control" 
+                               value="{{ course.category if course else '' }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="level">Level</label>
+                        <select id="level" name="level" class="form-control" required>
+                            <option value="beginner" {% if course and course.level == 'beginner' %}selected{% endif %}>Beginner</option>
+                            <option value="intermediate" {% if course and course.level == 'intermediate' %}selected{% endif %}>Intermediate</option>
+                            <option value="advanced" {% if course and course.level == 'advanced' %}selected{% endif %}>Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image_url">Image URL</label>
+                        <input type="url" id="image_url" name="image_url" class="form-control" 
+                               value="{{ course.image_url if course else '' }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <input type="text" id="duration" name="duration" class="form-control" 
+                               value="{{ course.duration if course else '' }}" required>
+                        <div class="help-text">Example: "6 Weeks", "8 Weeks"</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lessons">Number of Lessons</label>
+                        <input type="number" id="lessons" name="lessons" class="form-control" 
+                               value="{{ course.lessons if course else '' }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <input type="number" id="rating" name="rating" class="form-control" 
+                               value="{{ course.rating if course else 0 }}" step="0.1" min="0" max="5" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviews_count">Reviews Count</label>
+                        <input type="number" id="reviews_count" name="reviews_count" class="form-control" 
+                               value="{{ course.reviews_count if course else 0 }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="features">Features (one per line)</label>
+                        <textarea id="features" name="features" class="form-control">{% if features %}{{ features }}{% elif course %}{{ '\n'.join(json.loads(course.features)) if course.features else '' }}{% endif %}</textarea>
+                        <div class="help-text">Enter each feature on a new line</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="outcomes">Learning Outcomes (one per line)</label>
+                        <textarea id="outcomes" name="outcomes" class="form-control">{% if outcomes %}{{ outcomes }}{% elif course %}{{ '\n'.join(json.loads(course.outcomes)) if course.outcomes else '' }}{% endif %}</textarea>
+                        <div class="help-text">Enter each outcome on a new line</div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Course</button>
+                        <a href="{{ url_for('admin_courses') }}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
 {% block content %}
@@ -65,32 +66,32 @@
             <div class="course-info" data-aos="fade-left">
                 <div class="info-card">
                     <div class="course-thumbnail">
-                        <img src="{{ url_for('static', filename='img/course-thumbnail.jpg') }}" alt="Course Thumbnail">
-                        <div class="thumbnail-overlay">
-                            <a href="#" class="play-btn">
+                        <img src="{{ url_for('static', filename='img/capabi2.jpg') }}" alt="Course Thumbnail">
+                        <!-- <div class="thumbnail-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="play-btn">
                                 <i class="fas fa-play"></i>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                     
                     <div class="pricing-box">
                         <div class="price-header">
                             <h3>Machine Learning Fundamentals</h3>
-                            <div class="rating">
+                            <!-- <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
-                                <span>4.7 (1,245 reviews)</span>
-                            </div>
+                                <span>4.7 </span>
+                            </div> -->
                         </div>
                         
-                        <div class="price-details">
+                        <!-- <div class="price-details">
                             <div class="original-price">$299</div>
                             <div class="current-price">$199</div>
                             <div class="discount-badge">33% OFF</div>
-                        </div>
+                        </div> -->
                         
                         <div class="price-features">
                             <div class="feature-item">
@@ -303,7 +304,7 @@
 </section>
 
 <!-- Instructor Section -->
-<section class="instructor-section">
+<!-- <section class="instructor-section">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <h2>Meet Your <span class="gradient-text">Instructor</span></h2>
@@ -312,23 +313,23 @@
         
         <div class="instructor-profile" data-aos="fade-up" data-aos-delay="100">
             <div class="instructor-image">
-                <img src="{{ url_for('static', filename='img/instructor.jpg') }}" alt="Dr. Sarah Johnson">
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-globe"></i></a>
-                </div>
-            </div>
+    <img src="{{ url_for('static', filename='img/instructor.jpg') }}" alt="Akshay S">
+    <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fas fa-globe"></i></a>
+    </div>
+</div>
             <div class="instructor-details">
                 <h3>Akshay S</h3>
                 <div class="instructor-title">Senior AI Researcher at TechCorp</div>
                 <div class="instructor-bio">
-                    <p>With over 10 years of experience in machine learning and artificial intelligence, Dr. Johnson has led research teams at top tech companies and published numerous papers in prestigious journals. Her practical approach to teaching complex concepts makes learning accessible to everyone.</p>
-                    <p>As a former Google Brain researcher, she brings real-world insights and cutting-edge techniques to the classroom.</p>
+                    <p>With over 10 years of experience in machine learning and artificial intelligence, Akshay has led research teams at top tech companies and published numerous papers in prestigious journals. His practical approach to teaching complex concepts makes learning accessible to everyone.</p>
+                    <p>As a former Google Brain researcher, he brings real-world insights and cutting-edge techniques to the classroom.</p>
                 </div>
                 <div class="instructor-stats">
                     <div class="stat-item">
-                        <div class="stat-number">15+</div>
+                        <div class="stat-number">10+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-item">
@@ -340,87 +341,6 @@
                         <div class="stat-label">Average Rating</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Section -->
-<!-- <section class="enroll-testimonials">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <h2>Success <span class="gradient-text">Stories</span></h2>
-            <p>Hear from our alumni who transformed their careers</p>
-        </div>
-        
-        <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>This course completely changed my career trajectory. Within 3 months of completion, I landed a job as an ML Engineer with a 40% salary increase.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-image">
-                                        <img src="{{ url_for('static', filename='img/testimonial1.jpg') }}" alt="Michael Chen">
-                                    </div>
-                                    <div class="author-info">
-                                        <div class="author-name">Michael Chen</div>
-                                        <div class="author-title">ML Engineer at DataAI</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>The hands-on projects were exactly what I needed to build my portfolio. I got multiple job offers before even completing the course!</p>
-                                <div class="testimonial-author">
-                                    <div class="author-image">
-                                        <img src="{{ url_for('static', filename='img/testimonial2.jpg') }}" alt="Priya Patel">
-                                    </div>
-                                    <div class="author-info">
-                                        <div class="author-name">Priya Patel</div>
-                                        <div class="author-title">AI Researcher at NeuroTech</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <p>As a complete beginner, I was nervous about learning AI. But the instructors made complex concepts easy to understand with practical examples.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-image">
-                                        <img src="{{ url_for('static', filename='img/testimonial3.jpg') }}" alt="David Wilson">
-                                    </div>
-                                    <div class="author-info">
-                                        <div class="author-name">David Wilson</div>
-                                        <div class="author-title">Data Scientist at FinCorp</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -474,7 +394,7 @@
                             <textarea id="goals" name="goals" rows="3" placeholder="What do you hope to achieve with this course?"></textarea>
                         </div>
                         
-                        <div class="payment-options">
+                        <!-- <div class="payment-options">
                             <div class="payment-header">
                                 <h4>Payment Options</h4>
                             </div>
@@ -507,7 +427,12 @@
                             <div class="total-amount">
                                 <span>Total Amount:</span>
                                 <span class="amount">$199</span>
-                            </div>
+                            </div> -->
+                            <div class="form-footer">
+                            <div class="total-amount">
+                                <span>Total Amount:</span>
+                                <span class="amount">Free Registration</span>
+                            </div> 
                             
                             <button type="submit" class="enroll-now-btn">
                                 <span>Enroll Now</span>
@@ -551,7 +476,7 @@
                             </li>
                         </ul>
                         
-                        <div class="guarantee-badge">
+                        <!-- <div class="guarantee-badge">
                             <div class="guarantee-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
@@ -559,7 +484,7 @@
                                 <h4>30-Day Money-Back Guarantee</h4>
                                 <p>If you're not satisfied, we'll refund your payment.</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -642,6 +567,8 @@
         </div>
     </div>
 </section>
+
+
 
 <style>
     /* Enrollment Hero Section */
@@ -1033,329 +960,185 @@
     
     .accordion-toggle i {
         color: var(--primary);
-        transition: all 0.3s ease;
-    }
-    
-    .accordion-item.active .accordion-toggle {
-        transform: rotate(180deg);
-    }
-    
+        transition: all 0.3s ease;  
+            }
+
     .accordion-content {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
-    
+
     .accordion-item.active .accordion-content {
         max-height: 1000px;
     }
-    
+
+    .accordion-item.active .accordion-toggle i {
+        transform: rotate(180deg);
+    }
+
     .lesson-list {
         padding: 0 30px 30px;
     }
-    
+
     .lesson-list li {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 15px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    
+
     .lesson-list li:last-child {
         border-bottom: none;
     }
-    
+
     .lesson-info {
         display: flex;
         align-items: center;
     }
-    
+
     .lesson-info i {
         margin-right: 15px;
         color: var(--primary);
         font-size: 1.2rem;
     }
-    
+
     .lesson-duration {
         font-size: 0.9rem;
         opacity: 0.7;
     }
-    
+
     /* Instructor Section */
     .instructor-section {
         padding: 80px 0;
         background-color: var(--dark);
     }
-    
+
     .instructor-profile {
         display: grid;
         grid-template-columns: 300px 1fr;
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-    
-    .instructor-image {
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        height: 400px;
-    }
-    
-    .instructor-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .social-links {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        display: flex;
-        gap: 10px;
-    }
-    
-    .social-links a {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border-radius: 50%;
-        display: flex;
+        gap: 50px;
         align-items: center;
-        justify-content: center;
-        color: white;
-        transition: all 0.3s ease;
+        background: rgba(30, 41, 59, 0.7);
+        border-radius: 16px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .social-links a:hover {
-        background: var(--primary);
-        transform: translateY(-3px);
-    }
-    
-    .instructor-details {
-        padding-top: 20px;
-    }
-    
+
+    /* Instructor Image Container */
+.instructor-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 400px; /* Add fixed height */
+}
+
+.instructor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers container */
+    display: block;
+}
+
+/* Social Links Positioning */
+.social-links {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 2; /* Ensure links appear above image */
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(69, 47, 244, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
     .instructor-details h3 {
         font-size: 2rem;
         margin-bottom: 10px;
         color: white;
     }
-    
+
     .instructor-title {
         font-size: 1.1rem;
-        color: var(--accent);
+        color: var(--primary);
         margin-bottom: 20px;
+        font-weight: 600;
     }
-    
+
     .instructor-bio p {
-        opacity: 0.8;
         margin-bottom: 15px;
+        opacity: 0.9;
+        line-height: 1.6;
     }
-    
+
     .instructor-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        display: flex;
+        gap: 30px;
         margin-top: 30px;
     }
-    
+
     .stat-item {
         text-align: center;
-        padding: 20px;
-        background: rgba(30, 41, 59, 0.7);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .stat-number {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 700;
-        color: white;
+        color: var(--primary);
         margin-bottom: 5px;
-        font-family: 'Orbitron', sans-serif;
     }
-    
+
     .stat-label {
         font-size: 0.9rem;
-        opacity: 0.7;
+        opacity: 0.8;
     }
-    
-    /* Testimonials Section */
-    .enroll-testimonials {
-        padding: 80px 0;
-        background: linear-gradient(135deg, rgba(69, 47, 244, 0.1) 0%, rgba(65, 226, 149, 0.1) 100%);
-    }
-    
-    .testimonial-slider {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .testimonial-card {
-        background: rgba(30, 41, 59, 0.7);
-        border-radius: 16px;
-        padding: 40px;
-        margin: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-    }
-    
-    .testimonial-content {
-        position: relative;
-    }
-    
-    .quote-icon {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        font-size: 3rem;
-        color: var(--primary);
-        opacity: 0.2;
-    }
-    
-    .testimonial-card p {
-        font-size: 1.1rem;
-        font-style: italic;
-        margin-bottom: 30px;
-        opacity: 0.9;
-        position: relative;
-    }
-    
-    .testimonial-author {
-        display: flex;
-        align-items: center;
-    }
-    
-    .author-image {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 20px;
-        border: 3px solid var(--primary);
-    }
-    
-    .author-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .author-name {
-        font-weight: 600;
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-        color: white;
-    }
-    
-    .author-title {
-        opacity: 0.7;
-        font-size: 0.9rem;
-    }
-    
-    .swiper-pagination-bullet {
-        background: white;
-        opacity: 0.5;
-        width: 10px;
-        height: 10px;
-    }
-    
-    .swiper-pagination-bullet-active {
-        background: var(--primary);
-        opacity: 1;
-    }
-    
+
     /* Enrollment Form Section */
     .enrollment-form-section {
         padding: 80px 0;
-        position: relative;
-        background-color: var(--dark);
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.9));
     }
-    /* Testimonials Section */
-.testimonial-slider {
-    position: relative;
-    padding: 20px 0 60px; /* Extra space for pagination */
-}
 
-.testimonial-slider .swiper-container {
-    overflow: visible;
-}
-
-.swiper-pagination {
-    position: relative;
-    bottom: 0;
-    margin-top: 30px;
-}
-
-.swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 1;
-    margin: 0 8px !important;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--primary);
-    transform: scale(1.2);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background: var(--primary);
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.swiper-slide {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-    
     .enrollment-container {
         max-width: 1200px;
         margin: 0 auto;
     }
-    
+
     .enrollment-header {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
-    
+
     .enrollment-header h2 {
         font-size: 2.5rem;
         margin-bottom: 15px;
     }
-    
+
     .enrollment-header p {
         font-size: 1.1rem;
         opacity: 0.8;
         max-width: 700px;
         margin: 0 auto 20px;
     }
-    
+
     .enrollment-timer {
         display: inline-flex;
         align-items: center;
@@ -1363,282 +1146,285 @@
         padding: 10px 20px;
         border-radius: 50px;
     }
-    
+
     .timer-icon {
         margin-right: 10px;
         color: var(--secondary);
     }
-    
+
     .timer-text {
-        font-weight: 500;
+        font-weight: 600;
     }
-    
+
     #countdown {
         color: var(--secondary);
-        font-family: 'Orbitron', sans-serif;
     }
-    
+
     .enrollment-form-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 30px;
     }
-    
+
     .form-card {
         background: rgba(30, 41, 59, 0.7);
         border-radius: 16px;
         padding: 40px;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .enrollment-form {
         display: flex;
         flex-direction: column;
     }
-    
+
     .form-group {
         margin-bottom: 25px;
     }
-    
+
     .form-group label {
         display: block;
         margin-bottom: 10px;
-        font-weight: 500;
+        font-weight: 600;
         color: white;
     }
-    
+
     .form-group input,
     .form-group select,
     .form-group textarea {
         width: 100%;
         padding: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 8px;
         color: white;
-        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
         transition: all 0.3s ease;
     }
-    
+
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
         outline: none;
         border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(69, 47, 244, 0.3);
+        box-shadow: 0 0 0 3px rgba(69, 47, 244, 0.2);
     }
-    
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
     .payment-options {
-        margin: 30px 0;
+        margin-top: 30px;
     }
-    
+
     .payment-header {
         margin-bottom: 20px;
     }
-    
+
     .payment-header h4 {
         font-size: 1.2rem;
         color: white;
     }
-    
+
     .payment-methods {
         display: flex;
         flex-direction: column;
         gap: 15px;
+        margin-bottom: 25px;
     }
-    
+
     .method-option {
         position: relative;
     }
-    
+
     .method-option input {
         position: absolute;
         opacity: 0;
     }
-    
+
     .method-option label {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 20px;
-        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    
+
     .method-option input:checked + label {
-        background: rgba(69, 47, 244, 0.2);
-        border: 1px solid var(--primary);
+        border-color: var(--primary);
+        background: rgba(69, 47, 244, 0.1);
     }
-    
+
+    .method-option input:checked + label::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 20px;
+        height: 20px;
+        background: var(--primary);
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+
     .method-name {
-        font-weight: 500;
+        font-weight: 600;
         color: white;
     }
-    
+
     .method-price {
-        font-weight: 600;
+        font-weight: 700;
         color: var(--secondary);
     }
-    
+
     .coupon-field {
         display: flex;
-        margin-top: 20px;
+        gap: 10px;
+        margin-bottom: 30px;
     }
-    
+
     .coupon-field input {
         flex: 1;
         padding: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px 0 0 8px;
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
         color: white;
     }
-    
+
     .apply-coupon {
-        padding: 0 20px;
+        padding: 0 25px;
         background: var(--primary);
         color: white;
         border: none;
-        border-radius: 0 8px 8px 0;
+        border-radius: 8px;
+        font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    
+
     .apply-coupon:hover {
         background: var(--secondary);
     }
-    
+
     .form-footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .total-amount {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: white;
     }
-    
-    .amount {
-        font-size: 1.5rem;
+
+    .total-amount .amount {
         font-weight: 700;
         color: var(--secondary);
         margin-left: 10px;
     }
-    
+
     .enroll-now-btn {
         display: flex;
         align-items: center;
+        gap: 10px;
         padding: 15px 30px;
         background: var(--gradient);
         color: white;
         border: none;
-        border-radius: 50px;
-        font-weight: 600;
+        border-radius: 8px;
         font-size: 1rem;
+        font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(69, 47, 244, 0.4);
     }
-    
-    .enroll-now-btn i {
-        margin-left: 10px;
-        transition: all 0.3s ease;
-    }
-    
+
     .enroll-now-btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(69, 47, 244, 0.6);
+        box-shadow: 0 10px 20px rgba(69, 47, 244, 0.3);
     }
-    
-    .enroll-now-btn:hover i {
-        transform: translateX(5px);
-    }
-    
+
     .enrollment-benefits {
         position: sticky;
         top: 100px;
+        align-self: start;
     }
-    
+
     .benefits-card {
         background: rgba(30, 41, 59, 0.7);
         border-radius: 16px;
-        padding: 30px;
+        padding: 40px;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .benefits-card h3 {
         font-size: 1.5rem;
         margin-bottom: 25px;
         color: white;
     }
-    
+
     .benefits-list {
         list-style: none;
+        margin-bottom: 30px;
     }
-    
+
     .benefits-list li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 15px;
     }
-    
+
     .benefits-list i {
         color: var(--secondary);
         margin-right: 15px;
         font-size: 1.1rem;
+        margin-top: 3px;
     }
-    
+
     .guarantee-badge {
         display: flex;
         align-items: center;
         background: rgba(65, 226, 149, 0.1);
-        border: 1px solid rgba(65, 226, 149, 0.3);
+        border: 1px solid rgba(65, 226, 149, 0.2);
         border-radius: 12px;
         padding: 20px;
-        margin-top: 30px;
     }
-    
+
     .guarantee-icon {
-        width: 50px;
-        height: 50px;
-        background: rgba(65, 226, 149, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        font-size: 1.5rem;
+        margin-right: 15px;
+        font-size: 1.8rem;
         color: var(--secondary);
     }
-    
+
     .guarantee-text h4 {
         font-size: 1.1rem;
         margin-bottom: 5px;
         color: white;
     }
-    
+
     .guarantee-text p {
-        opacity: 0.8;
         font-size: 0.9rem;
+        opacity: 0.8;
     }
-    
+
     /* FAQ Section */
     .faq-section {
         padding: 80px 0;
-        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+        background-color: var(--dark);
+        
     }
-    
+
     .faq-container {
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
     }
-    
+
     .faq-item {
         background: rgba(30, 41, 59, 0.7);
         border-radius: 12px;
@@ -1646,7 +1432,7 @@
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .faq-question {
         display: flex;
         justify-content: space-between;
@@ -1655,20 +1441,20 @@
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    
+
     .faq-question:hover {
         background: rgba(69, 47, 244, 0.1);
     }
-    
+
     .faq-question h3 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: white;
         margin-right: 20px;
     }
-    
+
     .faq-toggle {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         background: rgba(69, 47, 244, 0.2);
         border-radius: 50%;
         display: flex;
@@ -1676,89 +1462,51 @@
         justify-content: center;
         transition: all 0.3s ease;
     }
-    
+
     .faq-toggle i {
         color: var(--primary);
         transition: all 0.3s ease;
     }
-    
-    .faq-item.active .faq-toggle {
-        transform: rotate(45deg);
-    }
-    
+
     .faq-answer {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
-    
+
     .faq-item.active .faq-answer {
         max-height: 500px;
         padding: 0 30px 30px;
     }
-    
-    .faq-answer p {
-        opacity: 0.8;
-        line-height: 1.6;
+
+    .faq-item.active .faq-toggle i {
+        transform: rotate(45deg);
     }
-    
+
+    .faq-answer p {
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
     .faq-cta {
         text-align: center;
         margin-top: 50px;
     }
-    
+
     .faq-cta a {
-        color: var(--accent);
+        color: var(--primary);
+        font-weight: 600;
         text-decoration: none;
         transition: all 0.3s ease;
     }
-    
+
     .faq-cta a:hover {
-        color: var(--primary);
+        color: var(--secondary);
         text-decoration: underline;
     }
-    .testimonial-slider .swiper-container {
-    padding: 20px 0 40px;
-}
 
-.swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--primary);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    backdrop-filter: blur(5px);
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 1rem;
-}
-    
     /* Responsive Styles */
-    @media (max-width: 1200px) {
-        .enroll-hero h1 {
-            font-size: 3rem;
-        }
-        
-        .instructor-profile {
-            grid-template-columns: 250px 1fr;
-        }
-    }
-    
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
         .details-grid {
             grid-template-columns: 1fr;
         }
@@ -1767,18 +1515,8 @@
             grid-template-columns: 1fr 1fr;
         }
         
-        .info-card {
-            position: static;
-        }
-        
         .instructor-profile {
             grid-template-columns: 1fr;
-        }
-        
-        .instructor-image {
-            height: 300px;
-            max-width: 400px;
-            margin: 0 auto;
         }
         
         .enrollment-form-container {
@@ -1786,26 +1524,18 @@
         }
         
         .enrollment-benefits {
+            position: static;
             margin-top: 40px;
         }
     }
-    
+
     @media (max-width: 768px) {
-        .enroll-hero {
-            min-height: 400px;
-            padding: 100px 0 60px;
-        }
-        
         .enroll-hero h1 {
             font-size: 2.5rem;
         }
         
         .course-highlights {
             grid-template-columns: 1fr;
-        }
-        
-        .section-header h2 {
-            font-size: 2rem;
         }
         
         .accordion-header {
@@ -1816,29 +1546,15 @@
         .header-content {
             margin-bottom: 15px;
         }
-        
-        .accordion-toggle {
-            align-self: flex-end;
-        }
-        
-        .instructor-stats {
-            grid-template-columns: 1fr;
-        }
     }
-    
+
     @media (max-width: 576px) {
         .enroll-hero h1 {
             font-size: 2rem;
         }
         
-        .enroll-badge {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .badge-icon {
-            margin-right: 0;
-            margin-bottom: 10px;
+        .section-header h2 {
+            font-size: 2rem;
         }
         
         .form-footer {
@@ -1846,44 +1562,226 @@
             gap: 20px;
         }
         
-        .total-amount {
-            text-align: center;
+        .enroll-now-btn {
+            width: 100%;
+            justify-content: center;
         }
     }
+
+    /* Animation Classes */
+    [data-aos] {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    [data-aos="fade-up"] {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    [data-aos="fade-up"].aos-animate {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    [data-aos="fade-right"] {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    [data-aos="fade-right"].aos-animate {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    [data-aos="fade-left"] {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    [data-aos="fade-left"].aos-animate {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+
+@media (max-width: 450px) {
+    .enroll-hero h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .enroll-hero p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .enroll-badge {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .accordion-header {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-content {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .week-badge {
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .lesson-list {
+        padding: 0 20px 20px;
+    }
+    
+    .lesson-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .instructor-profile {
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+    
+    .instructor-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-card {
+        padding: 25px;
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+    }
+    
+    .method-option label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .coupon-field {
+        flex-direction: column;
+    }
+    
+    .apply-coupon {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .benefits-card {
+        padding: 25px;
+    }
+    
+    .guarantee-badge {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .guarantee-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .enroll-hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .enroll-hero p {
+        font-size: 0.9rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    .accordion-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-card {
+        padding: 20px;
+    }
+    
+    .highlight-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .pricing-box {
+        padding: 20px;
+    }
+    
+    .current-price {
+        font-size: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .enroll-now-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+    
+    .benefits-list li {
+        font-size: 0.9rem;
+    }
+}
 </style>
 
+
+
 <script>
-    // Initialize AOS Animation
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-    });
-    
-    // Accordion Functionality
-    document.querySelectorAll('.accordion-header').forEach(header => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Accordion functionality
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
         header.addEventListener('click', () => {
-            const item = header.parentElement;
             item.classList.toggle('active');
-            
-            // Close other accordion items
-            document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
         });
     });
     
-    // FAQ Toggle Functionality
-    document.querySelectorAll('.faq-question').forEach(question => {
+    // FAQ functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
-            const item = question.parentElement;
             item.classList.toggle('active');
         });
     });
     
-    // Countdown Timer
+    // Countdown timer
     function updateCountdown() {
         const now = new Date();
         const midnight = new Date();
@@ -1899,56 +1797,43 @@
             `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
     
-    setInterval(updateCountdown, 1000);
     updateCountdown();
+    setInterval(updateCountdown, 1000);
     
-    // Payment Method Selection
-    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
-        radio.addEventListener('change', function() {
+    // Payment method toggle
+    const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+    paymentMethods.forEach(method => {
+        method.addEventListener('change', function() {
+            const totalAmount = document.querySelector('.total-amount .amount');
             if (this.value === 'full') {
-                document.querySelector('.amount').textContent = '$199';
-            } else if (this.value === 'installment') {
-                document.querySelector('.amount').textContent = '$225';
+                totalAmount.textContent = '$199';
+            } else {
+                totalAmount.textContent = '$225';
             }
         });
     });
     
-    // Testimonial Slider
-   // Initialize Swiper after DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const testimonialSwiper = new Swiper('.testimonial-slider .swiper-container', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        slidesPerView: 1,
-        spaceBetween: 30,
-        centeredSlides: true,
-        effect: 'slide',
-        speed: 800,
-    });
+    // Form submission
+    const enrollmentForm = document.getElementById('enrollmentForm');
+    if (enrollmentForm) {
+        enrollmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your enrollment! We will contact you shortly with further details.');
+            this.reset();
+        });
+    }
     
-    // Reinitialize AOS after Swiper loads to ensure animations work
-    AOS.refresh();
+    // Initialize AOS animations
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    }
 });
-    
-    // Form Submission
-    document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Here you would typically send the form data to your server
-        alert('Thank you for your enrollment! We will contact you shortly with further details.');
-        this.reset();
-    });
 </script>
 
-{% endblock %}
+{%endblock%}
+

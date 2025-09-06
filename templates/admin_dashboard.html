@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Enlighter Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #452FF4;
+            --secondary: #41E295;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --accent: #A58EFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Styles */
+        .admin-sidebar {
+            width: 250px;
+            background: var(--dark);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .admin-sidebar .logo {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-sidebar .logo img {
+            height: 40px;
+        }
+        
+        .admin-sidebar ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+        
+        .admin-sidebar ul li {
+            margin-bottom: 5px;
+        }
+        
+        .admin-sidebar ul li a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 12px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .admin-sidebar ul li a:hover,
+        .admin-sidebar ul li a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .admin-sidebar ul li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Main Content Styles */
+        .admin-main {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .admin-header h1 {
+            font-size: 24px;
+            color: var(--dark);
+        }
+        
+        .admin-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #341FDB;
+        }
+        
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 0.85rem;
+        }
+        
+        .verified-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .not-verified {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .back-btn {
+            margin-bottom: 20px;
+        }
+        
+        .user-detail-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .user-detail-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .user-detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .user-detail-label {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .user-detail-value {
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .admin-sidebar {
+                width: 200px;
+            }
+            
+            .admin-main {
+                margin-left: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .admin-container {
+                flex-direction: column;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            
+            .admin-main {
+                margin-left: 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Media Query for 570px */
+@media (max-width: 570px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .admin-header h1 {
+        font-size: 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-card {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+    }
+    
+    .btn-sm {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .admin-card {
+        padding: 15px;
+    }
+    
+    .admin-card h2 {
+        font-size: 18px;
+    }
+}
+
+/* Media Query for 476px */
+@media (max-width: 476px) {
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 0;
+    }
+    
+    .admin-sidebar .logo {
+        padding: 15px;
+    }
+    
+    .admin-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    .admin-sidebar ul li {
+        margin: 5px;
+    }
+    
+    .admin-sidebar ul li a {
+        padding: 8px 12px;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 5px;
+    }
+    
+    .admin-sidebar ul li a:hover,
+    .admin-sidebar ul li a.active {
+        border-left: none;
+        border-bottom: 3px solid var(--primary);
+    }
+    
+    .admin-main {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        min-width: 600px; /* Force horizontal scroll on small devices */
+    }
+    
+    th, td {
+        white-space: nowrap;
+    }
+    
+    .user-detail-card {
+        padding: 20px;
+    }
+    
+    .user-detail-value {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query for 350px */
+@media (max-width: 350px) {
+    .admin-sidebar ul li a {
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+    
+    .admin-sidebar ul li a i {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+    
+    .admin-header h1 {
+        font-size: 18px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .admin-card h2 {
+        font-size: 16px;
+    }
+    
+    .verified-badge,
+    .not-verified {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+    
+    .btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .user-detail-card {
+        padding: 15px;
+    }
+    
+    .user-detail-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .user-detail-label {
+        font-size: 0.9rem;
+    }
+    
+    .user-detail-value {
+        font-size: 0.95rem;
+    }
+}
+
+/* Additional utility classes for extra small screens */
+@media (max-width: 400px) {
+    .hidden-xs {
+        display: none !important;
+    }
+    
+    .text-xs-center {
+        text-align: center;
+    }
+    
+    .flex-xs-column {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/enlighter.jpeg') }}" alt="Enlighter Tech">
+            </div>
+            
+            <ul>
+                <li><a href="{{ url_for('admin_dashboard') }}" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="{{ url_for('admin_courses') }}"><i class="fas fa-book"></i> Courses</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+                <li><a href="{{ url_for('admin_contacts') }}"><i class="fas fa-envelope"></i> Messages</a></li>
+                <!-- {% if session.get('user_email') in ['darshanmpreddy@gmail.com'] %}
+<li><a href="{{ url_for('admin_control_panel') }}"><i class="fas fa-server"></i> Control Panel</a></li>
+{% endif %} -->
+                <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Back to Site</a></li>
+                <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="admin-main">
+            <div class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <div>
+                    <span>Welcome, Admin</span>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">{{ users|length }}</div>
+                    <div class="stat-label">Total Users</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">{{ verified_users }}</div>
+                    <div class="stat-label">Verified Users</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">{{ recent_users }}</div>
+                    <div class="stat-label">New Users (30 days)</div>
+                </div>
+            </div>
+            
+            <!-- Users Table -->
+            <div class="admin-card">
+                <h2>User Management</h2>
+                <p>View and manage all registered users.</p>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Registered</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.full_name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.phone if user.phone else 'N/A' }}</td>
+                                <td>
+                                    {% if user.is_verified %}
+                                        <span class="verified-badge">Verified</span>
+                                    {% else %}
+                                        <span class="not-verified">Not Verified</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ user.created_at.strftime('%Y-%m-%d') }}</td>
+                                <td>
+                                    <a href="{{ url_for('admin_user_detail', user_id=user.id) }}" class="btn btn-primary btn-sm">View Details</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

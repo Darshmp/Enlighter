@@ -62,10 +62,10 @@
 </div>
 
 <!-- Courses Grid Section -->
-<section class="courses-section">
+  <section class="courses-section">
     <div class="container">
         <div class="courses-grid">
-            <!-- Course 1 -->
+          
             <div class="course-card" data-category="foundations" data-level="beginner" data-rating="4.8">
                 <div class="course-card-header">
                     <div class="course-badge beginner">Beginner</div>
@@ -120,7 +120,7 @@
                 </div>
             </div>
 
-            <!-- Course 2 -->
+          
             <div class="course-card" data-category="machine-learning" data-level="intermediate" data-rating="4.9">
                 <div class="course-card-header">
                     <div class="course-badge intermediate">Intermediate</div>
@@ -176,7 +176,7 @@
                 </div>
             </div>
 
-            <!-- Course 3 -->
+          
             <div class="course-card" data-category="deep-learning" data-level="advanced" data-rating="4.7">
                 <div class="course-card-header">
                     <div class="course-badge advanced">Advanced</div>
@@ -234,7 +234,7 @@
                 </div>
             </div>
 
-            <!-- Course 4 -->
+           
             <div class="course-card" data-category="machine-learning deep-learning" data-level="advanced" data-rating="4.9">
                 <div class="course-card-header">
                     <div class="course-badge advanced">Advanced</div>
@@ -292,7 +292,7 @@
                 </div>
             </div>
 
-            <!-- Course 5 -->
+            
             <div class="course-card" data-category="machine-learning deep-learning" data-level="intermediate" data-rating="4.6">
                 <div class="course-card-header">
                     <div class="course-badge intermediate">Intermediate</div>
@@ -349,7 +349,7 @@
                 </div>
             </div>
 
-            <!-- Course 6 -->
+            
             <div class="course-card" data-category="business" data-level="intermediate" data-rating="4.5">
                 <div class="course-card-header">
                     <div class="course-badge intermediate">Intermediate</div>
@@ -406,20 +406,76 @@
                 </div>
             </div>
         </div>
-
-        <!-- Pagination -->
-        <!-- <div class="courses-pagination">
-            <a href="#" class="page-nav disabled"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="page-number active">1</a>
-            <a href="#" class="page-number">2</a>
-            <a href="#" class="page-number">3</a>
-            <span class="page-ellipsis">...</span>
-            <a href="#" class="page-number">8</a>
-            <a href="#" class="page-nav"><i class="fas fa-chevron-right"></i></a>
-        </div> -->
     </div>
 </section>
 
+
+<!-- Courses Grid Section -->
+<section class="courses-section">
+    <div class="container">
+        <div class="courses-grid">
+            {% for course in courses %}
+            <div class="course-card" data-category="{{ course.category|lower }}" data-level="{{ course.level }}" data-rating="{{ course.rating }}">
+                <div class="course-card-header">
+                    <div class="course-badge {{ course.level }}">{{ course.level|title }}</div>
+                    <div class="course-image">
+                        <img src="{{ course.image_url }}" alt="{{ course.title }}">
+                        <div class="course-play-overlay">
+                            <a href="https://www.youtube.com/watch?v=PHNJ2_4oefE" class="video-play-btn"><i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-card-body">
+                    <div class="course-category">{{ course.category }}</div>
+                    <h3 class="course-title">{{ course.title }}</h3>
+                    <p class="course-description">{{ course.description }}</p>
+                    
+                    <div class="course-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>{{ course.duration }}</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <span>{{ course.lessons }} Lessons</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificate</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="course-outcomes">
+                        {% for outcome in course.outcomes|from_json %}
+                        <li>{{ outcome }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="course-card-footer">
+                    <div class="course-rating">
+                        <div class="stars">
+                            {% for i in range(5) %}
+                                {% if i < course.rating|int %}
+                                    <i class="fas fa-star"></i>
+                                {% elif i < course.rating %}
+                                    <i class="fas fa-star-half-alt"></i>
+                                {% else %}
+                                    <i class="far fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                            <span>{{ course.rating }} ({{ course.reviews_count }})</span>
+                        </div>
+                    </div>
+                    <div class="course-actions">
+                        <a href="{{ url_for('cd', course_id=course.id) }}" class="btn btn-primary">View Course</a>
+                        <button class="btn-icon wishlist-btn" title="Add to wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 <!-- Call to Action Section -->
 <div class="cta-section">
     <div class="container">

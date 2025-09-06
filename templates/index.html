@@ -1018,7 +1018,20 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
+@media (max-width: 992px) {
+    html.menu-open {
+        overflow: hidden !important;
+        position: fixed; /* Prevent iOS bounce */
+        width: 100%; /* Fix layout shift */
+    }
+    .nav-menu {
+        right: -100% !important;
+        transition: right 0.3s ease !important;
+    }
+    .nav-menu.active {
+        right: 0 !important;
+    }
+}
 @media (max-width: 992px) {
     .hero h1 {
         font-size: 3rem;
@@ -1035,8 +1048,8 @@ footer {
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: 300px;
+        right: -100% !important;
+        width: 300px ;
         height: 70vh;
         background: white;
         backdrop-filter: blur(10px);
@@ -1047,7 +1060,7 @@ footer {
     }
     
     .nav-menu.active {
-        right: 0;
+        right: 0 !important;
     }
     
     .mobile-menu-btn {
@@ -1366,7 +1379,7 @@ footer {
     .nav-menu {
         width: 50%;
         background-color: white;
-        
+    
     }
 }
 
@@ -1633,6 +1646,78 @@ footer {
     }
 }
 
+/* User dropdown styles */
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .user-welcome {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: small;
+            color: #200d70;
+            background-color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .user-welcome:hover {
+            background-color: rgba(69, 47, 244, 0.1);
+        }
+        
+        .user-dropdown-content {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1001;
+            border-radius: 8px;
+            overflow: hidden;
+            display: none;
+            margin-top: 10px;
+        }
+        
+        .user-dropdown-content a {
+            color: #200d70;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .user-dropdown-content a:hover {
+            background-color: rgba(69, 47, 244, 0.1);
+            padding-left: 20px;
+        }
+        
+        .user-dropdown.active .user-dropdown-content {
+            display: block;
+        }
+        
+        /* Adjust header for dropdown */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+           /* Hide login/register from nav when logged in */
+        .nav-menu a[href*="login"],
+        .nav-menu a[href*="register"],
+        .nav-menu a[href*="dashboard"],
+        .nav-menu a[href*="logout"] {
+            display: none;
+        }
+        
+
    </style>
 </head>
 <body>
@@ -1648,25 +1733,44 @@ footer {
     </div>
     
     <!-- Header -->
-    <header id="header">
+   <header id="header">
         <div class="container header-container">
             <div class="logo">
-                <!-- <img src="/static/img/enlighter.jpeg" alt="Enlighter Tech Logo"> -->
-                 <img src="{{ url_for('static', filename='img/enlighter.jpeg') }}" alt="Logo">
+                <img src="{{ url_for('static', filename='img/enlighter.jpeg') }}" alt="Logo">
             </div>
             
-           <button class="mobile-menu-btn" id="mobileMenuBtn">
-    <i class="fas fa-bars"></i>
-</button>
+            <!-- User dropdown -->
+            <div class="user-dropdown" id="userDropdown">
+                <div class="user-welcome">
+                    <span>Welcome, {{ session.user_name if session.user_id else 'Guest' }}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-dropdown-content">
+                    {% if session.user_id %}
+                        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+                        <a href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                        <a href="{{ url_for('login') }}">Login</a>
+                        <a href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
+                    {% if session.user_email == 'admin@enlighter.com' %}
+                        <a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a>
+                    {% endif %}
 
-<nav class="nav-menu" id="navMenu">
-    <a href="#" class="active">Home</a>
-    <a href="{{ url_for('courses') }}">Courses</a>
-    <a href="#">Projects</a>
-    <a href="{{ url_for('about') }}">About Us</a>
-    <a href="{{ url_for('contact') }}">Contact</a>
-</nav>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
 
+            <nav class="nav-menu" id="navMenu" data-aos="none">
+                <a href="#" class="active">Home</a>
+                <a href="{{ url_for('courses') }}">Courses</a>
+                <a href="#">Projects</a>
+                <a href="{{ url_for('about') }}">About Us</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </nav>
         </div>
     </header>
     
@@ -1981,8 +2085,8 @@ footer {
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/enlighter-tech/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/enlighter_tech/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -1992,7 +2096,7 @@ footer {
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="{{ url_for('about') }}">About Us</a></li>
-                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="{{ url_for('courses') }}">Courses</a></li>
                         <li><a href="#">Projects</a></li>
                         <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     </ul>
@@ -2290,37 +2394,60 @@ footer {
             });
         }
         
+        
   // Mobile Menu Toggle
 function mobileMenuToggle() {
     const mobileBtn = document.getElementById('mobileMenuBtn');
-    const menuIcon = document.getElementById('menuIcon');
+    const menuIcon = mobileBtn.querySelector('i');
     const navMenu = document.getElementById('navMenu');
-    
-    mobileBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        
-        // Toggle between hamburger and close icon
-        if (navMenu.classList.contains('active')) {
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-times');
-        } else {
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
-        }
+    const html = document.documentElement; // Target <html> instead of <body>
+
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        navMenu.style.right = '-100%';
+        html.style.overflow = 'auto'; // Apply to <html>
+        html.classList.remove('menu-open');
+    };
+
+    const openMenu = () => {
+        navMenu.classList.add('active');
+        navMenu.style.right = '0';
+        html.style.overflow = 'hidden'; // Lock scroll on <html>
+        html.classList.add('menu-open');
+    };
+
+    mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.contains('active') ? closeMenu() : openMenu();
     });
-    
-    // Close menu when clicking on links
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
-        });
+
+    // Close when clicking outside or on links
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && e.target !== mobileBtn) closeMenu();
     });
+    navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 }
+        // Initialize everything when DOM is loaded
+     
+
+        // User dropdown functionality
+        function initUserDropdown() {
+            const userDropdown = document.getElementById('userDropdown');
+            
+            if (userDropdown) {
+                userDropdown.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+                
+                // Close dropdown when clicking elsewhere
+                document.addEventListener('click', function(e) {
+                    if (!userDropdown.contains(e.target)) {
+                        userDropdown.classList.remove('active');
+                    }
+                });
+            }
+        }
         
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
@@ -2330,6 +2457,7 @@ function mobileMenuToggle() {
             initTestimonialSlider();
             headerScrollEffect();
             mobileMenuToggle();
+            initUserDropdown(); 
         });
     </script>
 </body>
